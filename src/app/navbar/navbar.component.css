@@ -1,4 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Satisfy);
+
+
+
 body {
   font-family: calibri, arial;
   font-size: 18px;
@@ -14,6 +17,7 @@ ul li {
 }
 ul li:hover .submenu {
   height: 85px;
+  z-index: 99;
 }
 ul li:hover a {
   color: #3862a0;
@@ -40,8 +44,8 @@ ul li .submenu a {
   font-size: 16px;
 }
 ul li .submenu a:hover {
-  color: #fff;
-  text-decoration: underline;
+  color: #ffd500;
+  text-decoration: none;
 }
 ul li a {
   color: black;

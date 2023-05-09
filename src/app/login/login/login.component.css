@@ -1,0 +1,89 @@
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+.mybutton{
+
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 14px 60px;
+  border: 1px solid red;
+  background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
+  color: #fff;
+  transition: all 0.5s ease-in;
+  transition: all 0.5s ease-out;
+
+}
+
+.mybutton:hover{
+
+  border: 1px solid #222222;
+  background: #fff;
+  color: #222222;
+  transition: all 0.5s ease-out;
+  :hover {
+      border-color: #000000;
+      background: #f7f7f7;
+  }
+
+}
+
+.registerButton{
+
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 14px 60px;
+
+    cursor: pointer;
+    outline: 0;
+    color: #fff;
+    background-color: #242425;
+    border-color: #242425;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid transparent;
+
+    transition: all 0.5s ease-in;
+    transition: all 0.5s ease-out;
+
+    :hover {
+        color: #fff;
+        background-color: #0b5ed7;
+        border-color: #0a58ca;
+    }
+
+}
+
+.registerButton:hover{
+
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 14px 60px;
+
+  cursor: pointer;
+  outline: 0;
+  display: inline-block;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid transparent;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  color: #4e5156;
+  border-color: #4e5156;
+  :hover {
+      color: #fff;
+      background-color: #0d6efd;
+      border-color: #0d6efd;
+  }
+
+
+}

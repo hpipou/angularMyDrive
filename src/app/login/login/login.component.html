@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="d-flex align-items-center justify-content-center mt-5">
+  <div>
+
+      <form  style="min-width: 600px;" class="border p-3 mw-100" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="email" class="form-label">Adresse e-mail</label>
+          <input type="email" class="form-control" id="email" name="email" formControlName="email" required>
+
+          <div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched">
+            <div class="alert alert-danger mt-2" *ngIf="myForm.get('email')?.errors?.['required']">EMAIL REQUIRED</div>
+            <div class="alert alert-danger mt-2" *ngIf="myForm.get('email')?.errors?.['email']">INVALID EMAIL</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Mot de passe</label>
+          <input type="password" class="form-control" id="password" name="password" formControlName="password" required>
+
+          <div *ngIf="myForm.get('password')?.invalid && myForm.get('password')?.touched">
+            <div class="alert alert-danger mt-2" *ngIf="myForm.get('password')?.errors?.['required']">PASSWORD REQUIRED</div>
+            <div class="alert alert-danger mt-2" *ngIf="myForm.get('password')?.errors?.['maxlength']">PASSWORD MAX CHARS 20</div>
+            <div class="alert alert-danger mt-2" *ngIf="myForm.get('password')?.errors?.['minlength']">PASSWORD MIN CHARS 5</div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button [disabled]="!myForm.valid" type="submit" class="mybutton"><i class="fa-solid fa-right-to-bracket"></i> LOGIN</button>
+        </div>
+        <div *ngIf="errorAlert" class="alert alert-danger mt-2">{{errorMessage}}</div>
+      </form>
+
+      <div class="text-center mt-4 ms-5 me-5 mb-5">
+        <hr>
+        <p style="padding-bottom: 0px; margin-bottom: 0px;">Create new account :</p>
+        <a routerLink="/register" class="registerButton ps-5 pe-5">REGISTER</a>
+      </div>
+
+  </div>
+</div>

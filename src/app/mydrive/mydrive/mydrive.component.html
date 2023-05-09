@@ -1,1 +1,52 @@
-<p>mydrive works!</p>
+
+<div class="container d-flex align-items-center justify-content-center mt-2 text-center mb-5">
+
+  <div class="row" style="width: 1000px;">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="">
+                <div class="table-responsive">
+                    <table class="table project-list-table table-nowrap align-middle table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Number</th>
+                                <th scope="col">File Name</th>
+                                <th scope="col">File type</th>
+                                <th scope="col">Size</th>
+                                <th scope="col" style="width: 200px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of fileName; let i = index">
+                                <td>{{i + 1}}</td>
+                                <td>{{ item }}</td>
+                                <td><span class="badge badge-soft-success mb-0 fs-5">{{transform(item) | uppercase}}</span></td>
+                                <td><span class="badge badge-soft-primary mb-0 fs-5">{{sizeFile[i]}} Mo</span></td>
+                                <td>
+                                  <button class="btn btn-success me-2" (click)="downFile(item)"><i class="fa-solid fa-cloud-arrow-down"></i></button>
+                                  <button class="btn btn-danger" (click)="deleteFile(item, sizeFile[i])"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row g-0 align-items-center pb-4">
+        <div class="col-sm-12 d-flex justify-content-center">
+          <div class="alert alert-primary" role="alert">
+            Number of files : {{nombreFichier}}
+          </div>
+          <div class="alert alert-danger mx-3" role="alert">
+            Used Space : {{naiveRound(totalSize)}} Mo
+          </div>
+          <div class="alert alert-info" role="alert">
+            Free Space : {{naiveRound(10 - totalSize)}} Mo
+          </div>
+        </div>
+    </div>
+  </div>
+
+</div>

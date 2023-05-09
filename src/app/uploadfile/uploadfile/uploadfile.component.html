@@ -1,1 +1,63 @@
-<p>uploadfile works!</p>
+
+
+<div class="container mt-0">
+  <div class="row text-center align-items-center mt-0">
+      <div class="col-12 mt-0">
+        <!-- Page title -->
+        <div class="my-1">
+          <h3 class="mt-0">UPLOAD FILE</h3>
+          <hr>
+        </div>
+
+        <div class="container" *ngIf="uploadSuccess">
+          <div class="row">
+              <div class="col-md-12 col-lg-12">
+                  <div class="pricing-success pricing">
+                      <div class="title"><a href="/shop">File upload success</a></div>
+
+                      <ul class="options">
+                          <li class="active"><span><i class="fa fa-check"></i>
+                            </span>Free Space : {{msgSuccess.freeSpace}} Mo
+                          </li>
+                          <li class="active"><span><i class="fa fa-check"></i>
+                            </span>Used space : {{msgSuccess.usedSpace}} Mo
+                          </li>
+                      </ul>
+                      <div class="bottom-box d-flex justify-content-center">
+                        <button class="btn btn-success clearfix" (click)="refresh()">UPLOAD ANOTHER FILE</button>
+                        <a class="btn btn-primary clearfix ms-3" routerLink="/mydrive">VIEW FILE</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+        <!-- Form START -->
+        <form class="file-upload mt-0" *ngIf="!uploadSuccess">
+            <div class="col-xxl-12">
+              <div class="bg-secondary-soft px-4 py-5 rounded">
+                <div class="row g-3">
+                  <div class="text-center">
+                    <input class="form-control" type="file" id="file"  name="file" (change)="onChange($event)"><br>
+                    <button type="button"  class="btn fs-5 btn-success-soft btn-block px-5" (click)="envoyerUnfichier()">UPLOAD</button>
+                    <!-- ALERTE MESSAGE IN FAILED -->
+                    <div *ngIf="uploadFailed">
+                      <div class="alert alert-danger mt-2">{{msgFailed.error}}</div>
+                    </div>
+
+                    <p class="text-muted mt-3 mb-0">
+                      <span class="text text-danger">Accepted files</span>
+                      <br>JPG JPEG PNG PDF MP3 ZIP DOCX XLSX MP4 TXT
+                    </p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+        </form>
+        <!-- Form END -->
+      </div>
+    </div>
+  </div>
+
+

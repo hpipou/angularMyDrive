@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { GuardGuard } from './guard/guard.guard';
 
 const routes: Routes = [
   {
     path:'',
-    loadChildren:()=> import('./home/home.module').then(module=> module.HomeModule)
+    loadChildren:()=> import('./home/home.module').then(module=> module.HomeModule),
+    canActivate:[GuardGuard]
   },
   {
     path:'login',
@@ -17,7 +19,8 @@ const routes: Routes = [
   },
   {
     path:'profil',
-    loadChildren:()=> import('./profil/profil.module').then(module=>module.ProfilModule)
+    loadChildren:()=> import('./profil/profil.module').then(module=>module.ProfilModule),
+    canActivate:[GuardGuard]
   },
   {
     path:'logout',
@@ -25,15 +28,18 @@ const routes: Routes = [
   },
   {
     path:'edit',
-    loadChildren:()=> import('./editprofil/editprofil.module').then(module=>module.EditprofilModule)
+    loadChildren:()=> import('./editprofil/editprofil.module').then(module=>module.EditprofilModule),
+    canActivate:[GuardGuard]
   },
   {
     path:'upload',
-    loadChildren:()=> import('./uploadfile/uploadfile.module').then(module=>module.UploadfileModule)
+    loadChildren:()=> import('./uploadfile/uploadfile.module').then(module=>module.UploadfileModule),
+    canActivate:[GuardGuard]
   },
   {
     path:'mydrive',
-    loadChildren:()=> import('./mydrive/mydrive.module').then(module=>module.MydriveModule)
+    loadChildren:()=> import('./mydrive/mydrive.module').then(module=>module.MydriveModule),
+    canActivate:[GuardGuard]
   },
   {
     path:'**',

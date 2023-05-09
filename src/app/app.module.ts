@@ -13,12 +13,15 @@ import { MydriveModule } from './mydrive/mydrive.module';
 import { UploadfileModule } from './uploadfile/uploadfile.module';
 import { LogoutModule } from './logout/logout.module';
 import { EditprofilModule } from './editprofil/editprofil.module';
+import { HttpClientModule } from '@angular/common/http';
+import { BackgroundComponent } from './background/background.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    BackgroundComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { EditprofilModule } from './editprofil/editprofil.module';
     MydriveModule,
     UploadfileModule,
     LogoutModule,
-    EditprofilModule
+    EditprofilModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
